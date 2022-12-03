@@ -17,7 +17,7 @@ export const sortArray = (array) => {
     if (!array.length) {
         return array;
     }
-    if (typeof array[0] === "number") {
+    if (typeof array[0] === 'number') {
         return array.sort((a, b) => a - b);
     }
     return array.sort();
