@@ -20,3 +20,7 @@ Array.prototype.parseInt = function (item) {
 Array.prototype.sortTyped = function () {
     return sortArray(this);
 };
+
+Object.prototype.keys = function () {
+    return Object.keys(this);
+};
