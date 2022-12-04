@@ -8,7 +8,6 @@ var elfsFoods = data.split('\n').splitByItem('')
 var sortedCaloriesSum = elfsFoods.map((x) => x.sum()).sortTyped().reverse()
 
 console.log(sortedCaloriesSum[0], 'MAXCAL')
-// 71780 MAXCAL
 
-console.log(sortedCaloriesSum[0] + sortedCaloriesSum[1] + sortedCaloriesSum[2], 'SUM_3_MAXCAL')
-// 212489 SUM_3_MAXCAL
+console.log(sortedCaloriesSum[0] +
+    sortedCaloriesSum[1] + sortedCaloriesSum[2], 'SUM_3_MAXCAL')

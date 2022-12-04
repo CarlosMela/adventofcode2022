@@ -69,6 +69,6 @@ function getWinner(bet) {
 }
 
 console.log(score1, 'PART1')
-// 8933 PART1
+
 console.log(score2, 'PART2')
-// 11998 PART2
+
