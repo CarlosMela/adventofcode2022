@@ -4,28 +4,26 @@ import {map, split} from 'ramda'
 
 var data = await readFile(new URL('./input.txt', import.meta.url))
 
-var part1 = data
+let intervals = data
     .split('\n')
     .map(split(','))
     .map(map(split('-')))
     .map(map(map(parseInt)))
-    .filter(x => overlaps(x[0], x[1]) || overlaps(x[1], x[0]))
+
+var part1 = intervals
+    .filter(([interval1, interval2]) => overlaps(interval1, interval2) || overlaps(interval2, interval1))
     .length
 
-var part2 = data
-    .split('\n')
-    .map(split(','))
-    .map(map(split('-')))
-    .map(map(map(parseInt)))
-    .filter(x => overlapsSomething(x[0], x[1]) || overlapsSomething(x[1], x[0]))
+var part2 = intervals
+    .filter(([interval1, interval2]) => overlapsSomething(interval1, interval2) || overlapsSomething(interval2, interval1))
     .length
 
-function overlaps(a, b) {
-    return a[0] <= b[0] && a[1] >= b[1]
+function overlaps([a, b], [x, y]) {
+    return a <= x && b >= y
 }
 
-function overlapsSomething(a, b) {
-    return (b[0] <= a[0] && a[0] <= b[1]) || (b[0] <= a[1] && a[1] <= b[1])
+function overlapsSomething([a, b], [x, y]) {
+    return (x <= a && a <= y) || (x <= b && b <= y)
 }
 
 console.log(part1, 'PART1')
