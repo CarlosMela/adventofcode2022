@@ -1,3 +1,5 @@
+import {curry} from 'ramda'
+
 export const splitArrayByItem = (array, item) => {
     return array.reduce((acc, element) => {
         if (element === item) {
@@ -29,7 +31,19 @@ export const sortArray = (array) => {
         return array
     }
     if (typeof array[0] === 'number') {
-        return array.sort((a, b) => a - b);
+        return array.sort((a, b) => a - b)
     }
-    return array.sort();
+    return array.sort()
 }
+
+export const splitEveryWithSkip = curry((every, skip, array) => {
+    var result = []
+    var start = 0
+    var end = every
+    while (start < array.length) {
+        result.push(array.slice(start, end))
+        start = end + skip
+        end = start + every
+    }
+    return result
+})
