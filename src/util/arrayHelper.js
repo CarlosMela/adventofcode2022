@@ -37,9 +37,9 @@ export const sortArray = (array) => {
 }
 
 export const splitEveryWithSkip = curry((every, skip, array) => {
-    var result = []
-    var start = 0
-    var end = every
+    const result = []
+    let start = 0
+    let end = every
     while (start < array.length) {
         result.push(array.slice(start, end))
         start = end + skip

@@ -8,9 +8,9 @@ const scissors = 3
 const opponentBets = {'A': rock, 'B': paper, 'C': scissors}
 const myBets = {'X': rock, 'Y': paper, 'Z': scissors}
 
-var data = await readFile(new URL('./input.txt', import.meta.url))
+const data = await readFile(new URL('./input.txt', import.meta.url))
 
-var score1 = data.split('\n')
+const score1 = data.split('\n')
     .map((round) => {
         return round.split(' ')
     })
@@ -19,7 +19,8 @@ var score1 = data.split('\n')
         return himMe[1] + outcomeScore(himMe[0], himMe[1])
     })
     .sum()
-var score2 = data.split('\n')
+
+const score2 = data.split('\n')
     .map((round) => {
         return round.split(' ')
     })
