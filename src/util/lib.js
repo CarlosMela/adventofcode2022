@@ -1,8 +1,12 @@
 import {sum} from 'ramda'
-import {splitArrayByItem, parseIntArray, sortArray} from './arrayHelper.js'
+import {parseIntArray, sortArray, splitArrayByItem} from './arrayHelper.js'
 
 Array.prototype.max = function () {
     return Math.max.apply(this, this)
+}
+
+Array.prototype.min = function () {
+    return Math.min.apply(this, this)
 }
 
 Array.prototype.sum = function () {
