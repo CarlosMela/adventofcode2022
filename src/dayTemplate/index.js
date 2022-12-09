@@ -1,7 +1,7 @@
 import '../util/lib.js'
 import {fetchInput} from '../util/onlineInput.js'
 
-// var data = await readFile(new URL('./input.txt', import.meta.url))
+// const data = await readFile(new URL('./input.txt', import.meta.url))
 const data = await fetchInput(5)
 
 const part1 = data
