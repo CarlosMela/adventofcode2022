@@ -11,26 +11,16 @@ const myBets = {'X': rock, 'Y': paper, 'Z': scissors}
 const data = await readFile(new URL('./input.txt', import.meta.url))
 
 const score1 = data.split('\n')
-    .map((round) => {
-        return round.split(' ')
-    })
+    .map(round => round.split(' '))
     .map(value => [opponentBets[value[0]], myBets[value[1]]])
-    .map((himMe) => {
-        return himMe[1] + outcomeScore(himMe[0], himMe[1])
-    })
+    .map(himMe => himMe[1] + outcomeScore(himMe[0], himMe[1]))
     .sum()
 
 const score2 = data.split('\n')
-    .map((round) => {
-        return round.split(' ')
-    })
-    .map((himMe) => {
-        return [himMe[0], selectOutcome(himMe[0], himMe[1])]
-    })
+    .map(round => round.split(' '))
+    .map(himMe => [himMe[0], selectOutcome(himMe[0], himMe[1])])
     .map(value => [opponentBets[value[0]], myBets[value[1]]])
-    .map((himMe) => {
-        return himMe[1] + outcomeScore(himMe[0], himMe[1])
-    })
+    .map(himMe => himMe[1] + outcomeScore(himMe[0], himMe[1]))
     .sum()
 
 function outcomeScore(him, me) {

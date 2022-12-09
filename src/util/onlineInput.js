@@ -2,8 +2,8 @@ import https from 'https'
 
 const sessionCookie = ''
 
-export const fetchInput = async (day, year = 2022) => {
-    return new Promise((resolve, reject) => {
+export const fetchInput = async (day, year = 2022) =>
+    new Promise((resolve, reject) => {
         https.get(`https://adventofcode.com/${year}/day/${day}/input`,
             {
                 headers: {
@@ -25,7 +25,5 @@ export const fetchInput = async (day, year = 2022) => {
                 reject(err.message)
             })
     })
-
-}
 
 

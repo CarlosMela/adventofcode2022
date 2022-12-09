@@ -1,7 +1,7 @@
 import {curry} from 'ramda'
 
-export const splitArrayByItem = (array, item) => {
-    return array.reduce((acc, element) => {
+export const splitArrayByItem = (array, item) =>
+    array.reduce((acc, element) => {
         if (element === item) {
             acc.push([])
             return acc
@@ -9,10 +9,9 @@ export const splitArrayByItem = (array, item) => {
         acc[acc.length - 1].push(element)
         return acc
     }, [[]])
-}
 
-export const splitArrayByLines = (array, lines) => {
-    return array.reduce((acc, element, currentIndex) => {
+export const splitArrayByLines = (array, lines) =>
+    array.reduce((acc, element, currentIndex) => {
         if (currentIndex % lines === 0) {
             acc.push([element])
             return acc
@@ -20,13 +19,10 @@ export const splitArrayByLines = (array, lines) => {
         acc[acc.length - 1].push(element)
         return acc
     }, [])
-}
 
-export const parseIntArray = (array) => {
-    return array.map(n => parseInt(n))
-}
+export const parseIntArray = array => array.map(n => parseInt(n))
 
-export const sortArray = (array) => {
+export const sortArray = array => {
     if (!array.length) {
         return array
     }
