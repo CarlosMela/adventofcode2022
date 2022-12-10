@@ -1,6 +1,6 @@
 import {sum} from 'ramda'
 import {parseIntArray, sortArray, splitArrayByItem} from './arrayHelper.js'
-import {getNumbers} from './stringHelper.js'
+import {getNumbers, getStrings} from './stringHelper.js'
 
 Array.prototype.max = function () {
     return Math.max.apply(this, this)
@@ -8,6 +8,10 @@ Array.prototype.max = function () {
 
 Array.prototype.min = function () {
     return Math.min.apply(this, this)
+}
+
+Array.prototype.last = function () {
+    return this[this.length - 1]
 }
 
 Array.prototype.sum = function () {
@@ -42,4 +46,8 @@ Object.prototype.string = function () {
 
 String.prototype.numbers = function () {
     return getNumbers(this)
+}
+
+String.prototype.strings = function () {
+    return getStrings(this)
 }
