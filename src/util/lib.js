@@ -1,4 +1,4 @@
-import {sum} from 'ramda'
+import {multiply, reduce, sum} from 'ramda'
 import {parseIntArray, sortArray, splitArrayByItem} from './arrayHelper.js'
 import {getNumbers, getStrings} from './stringHelper.js'
 
@@ -16,6 +16,10 @@ Array.prototype.last = function () {
 
 Array.prototype.sum = function () {
     return sum(this)
+}
+
+Array.prototype.multiply = function () {
+    return reduce(multiply, 1, this)
 }
 
 Array.prototype.splitByItem = function (item) {
